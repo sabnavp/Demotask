@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Fill the form</h2>
+<form action="new"  method="post">
+    {% csrf_token %}
+    <input type="text"  name="Name"  placeholder="enter your name"><br>
+    <input type="date"  name="DOB"  placeholder="enter your date of birth"><br>
+    <input type="text"  name="Age"  placeholder="enter your Age"><br>
+     <input type="text"  name="Gender"  placeholder="select your gender"><br>
+     <input type="radio"  value="Male"  name="Gender" Checked>Male
+    <input type="radio"  value="Female"  name="Gender" Checked>Female
+    <input type="radio"  value="Other"  name="Gender" Checked>Other<br>
+     <input type="text"  name="Phone number"  placeholder="enter your phone number"><br>
+    <input type="email"  name="email"  placeholder="enter your email id"><br>
+    <input type="text"  name="address"  placeholder="enter your address"><br>
+
+
+
+
+           <label for="">Choose your district</label>
+    <select name="slct1" id="slct1" onchange="populate(this.id,'slct2')">
+    <option value="Calicut">Calicut</option>
+   <option value="Kannur">Kannur</option>
+   <option value="Malappuram">Malappuram</option>
+   <option value="Palakkad">Palakkad</option>
+    <option value="Ernakulam">Ernakulam</option>
+    </select><br>
+
+
+
+
+    <label for="Account type">Choose your account type:</label>
+    <select name="Account type" id="Account type">
+    <option value="Savings">Savings</option>
+   <option value="Current">Current</option>
+   <option value="Other">Other</option>
+</select><br>
+    <input type="text"  name="Materials provided"  placeholder="select your material"><br>
+    <input type="checkbox"  value="debit card"  name="Materials provided" Checked>debitcard
+    <input type="checkbox"  value="credit card"  name="Materials provided" Checked>credit card
+   <input type="checkbox"  value="cheque book"  name="Materials provided" Checked>cheque book<br><br>
+
+
+
+
+<!--    <input type="submit">-->
+<!--    <button type="submit" class="logoutbutton" >Logout</button>-->
+<!--    <input type="submit" name="action" value="Logout" />-->
+
+  <div class="container">
+  <div class="row">
+       <a class="btn btn-success" href="{% url 'sub'  %}">Submit</a><br>
+        <a class="btn btn-danger" href="{% url 'index'  %}">Logout</a>
+  </div>
+  </div>
+
+</form>
+</body>
+</html>
